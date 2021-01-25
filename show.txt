@@ -1,0 +1,28 @@
+
+'use strict'; // niezbędna linia do wykonania tego zadania, po więcej informacji zapraszam do google.
+
+
+
+function isElementInViewport(el) {
+    var rect = el.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+} // zwraca true albo false
+
+var liList = document.getElementsByTagName("ul#timeline li");
+function callbackFun( X ) {
+
+}
+
+window.addEventListener("load", callbackFunc);
+window.addEventListener("resize", callbackFunc);
+window.addEventListener("scroll", callbackFunc);
+
+1. Pobieramy do zmiennej wszystkie znaczniki LI z ul => var liList = document.getElementsByTagName("ul li"); 
+    2. Robicie funkcje w stylu callbackFunc() => w pętli iterujecie po tablicy która zawiera wszystkie LI z listy ul
+    3. W tej pętli sprawdzacie czy element znajduje się we viewporcie => isElementInViewport(liList[i]);
+    4. Jeśli prawda to dodajemy klasę np isVisible
