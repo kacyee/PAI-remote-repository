@@ -8,6 +8,8 @@ var items = document.querySelectorAll(".timeline li");
 // http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
 function isElementInViewport(el) {
     var rect = el.getBoundingClientRect();
+
+    console.log(rect);
     return (
         rect.top >= 0 &&
         rect.left >= 0 &&
